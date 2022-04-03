@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="timer.css">
+    <style>
+        *{ margin: 0; padding: 0; }
+
+        div{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(#16bffd, rgb(166, 255, 0));
+        }
+        p{
+            height: 100px;
+            width: 600px;
+            background-image: linear-gradient(#16bffd, #cb3066);
+        color: white;
+        line-height: 100px;
+        text-align: center;
+        font-size: 60px;
+        margin-top: 0px;
+        box-shadow: 1px 1px 0px #000,
+              2px 2px 0px #000,
+              3px 3px 0px #000,
+              4px 4px 0px #000,
+              5px 5px 0px #000,
+              6px 6px 0px #000;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <h1>DK NETWORK</h1>
+        <p id="demo"></p>
+    </div>
+
+    <a href="test.html"><button>GO</button></a>
+
+    <script>
+      var dest = new Date("apr 30, 2022 12:00:00").getTime();
+
+      var x = setInterval(function() {
+       
+      var now = new Date().getTime();
+
+      var diff = dest - now ;
+      
+      var days = Math.floor(diff / (1000*60*60*24));
+      console.log(days);
+    
+      var hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+      console.log(hours);
+      
+      var minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+      console.log(minutes);
+
+      var seconds = Math.floor((diff % (1000*60)) / (1000)); 
+      console.log(seconds);
+
+      document.getElementById("demo").innerHTML = days +"D " + hours + "h " + minutes + "M " + seconds + "S "
+
+      if (diff < 0) {
+          clearInterval (x);
+          document.getElementById("demo").innerHTML = "time up";
+          document.getElementById("days").innerHTML = '0';
+          document.getElementById("hours").innerHTML = '0';
+          document.getElementById("minutes").innerHTML = '0';
+          document.getElementById("seconds").innerHTML = '0'; }
+
+      }, 1000 );
+
+    </script>
+    
+</body>
+</html>

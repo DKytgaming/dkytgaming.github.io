@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>TEAM AGI</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <div class="main">
+        <nav>
+           <div class="logo">
+             <img src="image/logo.jpg">
+           </div>
+           <div class="nav-links">
+             <ul>
+               <li><a href="test.html">home</a></li>
+               <li><a href="video.html">Video</a></li>
+               <li><a href="discord.html" target="_blank">discord</a></li>
+               <li><a href="downloads.html" target="_blank">downloads</a></li>
+             </ul>
+           </div>
+        </nav>
+         
+        <div class="information">
+            <div class="overlay"></div>
+          <img src="image/team.jpg" class="team">
+            <div id="circle">
+                <div class="feature one">
+                  <div>
+                    <h1>DK</h1>
+                      <p>Gamer / developer</p>
+                  </div>
+                </div>
+                <div class="feature two">
+                  <div>
+                    <h1>like</h1>
+                      <p>the video</p>
+                  </div>
+                </div>
+                <div class="feature three">
+                  <div>
+                    <h1>subscribe</h1>
+                      <p>to my channel</p>
+                  </div>
+                </div>
+                <div class="feature four">
+                  <div>
+                    <h1>Share</h1>
+                      <p>the video</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+          <img src="5.png" id="upBtn">
+          <h3>Rotate</h3>
+          <img src="5.png" id="downBtn">
+        </div>
+    </div>
+
+    <script>
+      var circle = document.getElementById("circle");
+      var upBtn = document.getElementById("upBtn");
+      var downBtn = document.getElementById("downBtn");
+
+      var rotateValue = circle.style.transform;
+      var rotatesum;
+
+
+      upBtn.onclick = function()
+      {
+          rotatesum = rotateValue + "rotate(-90deg)";
+          circle.style.transform = rotatesum;
+          rotateValue = rotatesum
+      }
+      downBtn.onclick = function()
+      {
+          rotatesum = rotateValue + "rotate(90deg)";
+          circle.style.transform = rotatesum;
+          rotateValue = rotatesum
+      }
+    </script>
+     
+</body>
+</html>
